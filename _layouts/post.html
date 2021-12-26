@@ -1,0 +1,59 @@
+---
+layout: default
+---
+<article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">{{ page.title | escape }}</h1>
+    <p class="post-meta">
+    {% for tag in page.tags %}
+      {% include taglink.html name=tag %}
+    {% endfor %}
+  </header>
+
+
+  <div class="post-content e-content" itemprop="articleBody">
+    {%include image.html source=page%}
+    <span class="image-credit">({{ page.image_credit }})</span>
+    <div class="reference-text">
+      {{ page.reference }}
+    </div>
+    {{ content }}
+  </div>
+
+  {%- if site.disqus.shortname -%}
+    {%- include disqus_comments.html -%}
+  {%- endif -%}
+  <script>
+    var refTagger = {
+      settings: {
+        bibleVersion: "RSV",      
+        roundCorners: true,      
+        customStyle: {
+          heading: {
+            backgroundColor: "#e7e7e7",
+            color: "#333",
+            fontFamily: "source_sans",
+            fontSize: "14px"
+          },
+          body: {
+            color: "#666",
+            fontFamily: "source-sans",
+            fontSize: "14px"
+          }
+        },
+        tooltipStyle: ""
+      }
+    };
+    (function(d, t) {
+      var n=d.querySelector("[nonce]");
+      refTagger.settings.nonce = n && (n.nonce||n.getAttribute("nonce"));
+      var g = d.createElement(t), s = d.getElementsByTagName(t)[0];
+      g.src = "https://api.reftagger.com/v2/RefTagger.js";
+      g.nonce = refTagger.settings.nonce;
+      s.parentNode.insertBefore(g, s);
+    }(document, "script"));
+  </script>
+
+  <a class="u-url" href="{{ page.url | relative_url }}" hidden></a>
+</article>

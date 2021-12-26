@@ -1,9 +1,12 @@
 ---
 layout: post
+title: The woman at the well
+permalink: /:title/
+reference: John 4:1-30
+image_credit: The Water of Life Discourse between Jesus and the Samaritan Woman at the Well, Angelika Kauffmann, 17–18th century
+tags: conversion
 ---
-# Encountering Christ: The woman at the well
-
-John 4:1-30 - Classic conversion
+In just a moment, what starts as a normal encounter can change your life forever.
 
 ## Background
 

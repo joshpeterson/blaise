@@ -1,0 +1,11 @@
+{%- for post in site.posts -%}
+  {% if post.title == include.title %}
+    <h1>
+      <a href="{{ post.url | relative_url }}">
+        {{ post.title | escape }}
+      </a>
+    </h1>
+    {{ post.excerpt }}
+    {% include image.html source=post %}
+  {%- endif -%}
+{%- endfor -%}

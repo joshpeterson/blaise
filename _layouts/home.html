@@ -1,0 +1,85 @@
+---
+layout: default
+---
+
+<div class="home">
+  {%- if page.title -%}
+    <h1 class="page-heading">{{ page.title }}</h1>
+  {%- endif -%}
+
+  {{ content }}
+
+  {% include feature.html title=site.data.home.feature %}
+
+  {% comment %}
+  {%- if site.pages.size > 0 -%}
+    <ul class="post-list">
+      {%- for page in site.pages -%}
+        {%- if page.teaser -%}
+          <li>
+            <h3>
+              <a class="post-link" href="{{ page.url | relative_url }}">
+                {{ page.title | escape }}
+              </a>
+            </h3>
+            {{ page.teaser }}
+            {% include image.html source=page %}
+          </li>
+        {%- endif -%}
+      {%- endfor -%}
+    </ul>
+  {%- endif -%}
+
+  {%- if site.posts.size > 0 -%}
+    <h2 class="post-list-heading">{{ page.list_title | default: "Posts" }}</h2>
+    <ul class="post-list">
+      {%- for post in site.posts -%}
+      <li>
+        {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+        <span class="post-meta">{{ post.date | date: date_format }}</span>
+        <h3>
+          <a class="post-link" href="{{ post.url | relative_url }}">
+            {{ post.title | escape }}
+          </a>
+        </h3>
+        {%- if site.show_excerpts -%}
+          {{ post.excerpt }}
+          {% include image.html source=post %}
+        {%- endif -%}
+      </li>
+      {%- endfor -%}
+    </ul>
+
+    <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | relative_url }}">via RSS</a></p>
+  {%- endif -%}
+
+  {% for tag in site.tags %}
+    <h3>{{ tag[0] }}</h3>
+    <ul>
+      {% for post in tag[1] %}
+        <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+      {% endfor %}
+    </ul>
+  {% endfor %}
+  {% endcomment %}
+
+  <br/>
+  <br/>
+
+  <div>
+    <div class="home-col home-col-1">
+      Explore {% include taglink.html name=site.data.home.column_one_tag %}
+      {% include display.html title=site.data.home.column_one_title %}
+    </div>
+
+    <div class="home-col home-col-2">
+      Explore {% include taglink.html name=site.data.home.column_two_tag %}
+      {% include display.html title=site.data.home.column_two_title %}
+    </div>
+
+    <div class="home-col home-col-3">
+      Explore {% include taglink.html name=site.data.home.column_three_tag %}
+      {% include display.html title=site.data.home.column_three_title %}
+    </div>
+  </div>
+</div>
