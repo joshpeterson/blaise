@@ -15,10 +15,10 @@ faith, hope, and love.
 
 ## Open source
 
-This site is built as open source software [see it
+This site is built as open source software - [see it
 happen](https://github.com/joshpeterson/blaise/).
 
-It uses [Jekyll](https://jekyllrb.com/) and
+It uses great software from [Jekyll](https://jekyllrb.com/) and
 [Reftagger](https://faithlife.com/products/reftagger).
 
 ## Inspiration
