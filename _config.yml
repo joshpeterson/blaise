@@ -49,6 +49,7 @@ header_pages:
 exclude:
   - LICENSE
   - README.md
+  - CNAME
 #   - .sass-cache/
 #   - .jekyll-cache/
 #   - gemfiles/
