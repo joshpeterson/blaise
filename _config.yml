@@ -29,6 +29,7 @@ twitter_username: petersonjm1
 
 # Build settings
 theme: minima
+rss: Subscribe
 plugins:
   - jekyll-feed
 show_excerpts: true
@@ -45,7 +46,9 @@ header_pages:
 # Excluded items can be processed by explicitly listing the directories or
 # their entries' file path in the `include:` list.
 #
-# exclude:
+exclude:
+  - LICENSE
+  - README.md
 #   - .sass-cache/
 #   - .jekyll-cache/
 #   - gemfiles/
