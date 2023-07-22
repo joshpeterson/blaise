@@ -25,7 +25,6 @@ description: >- # this means to ignore newlines until "baseurl:"
   Engaging stories of discovery and faith for the short attention span.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: BibleShortsNet
 
 # Build settings
 theme: minima
